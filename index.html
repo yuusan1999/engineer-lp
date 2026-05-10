@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>年収は上がった。でも、人生が進んでいる感じがしない。</title>
+  <meta name="description" content="東京・大阪エリアで年収と納得感の両方を考えたい20〜30代エンジニア経験者向けの転職・キャリア相談LP。">
+  <style>
+    :root {
+      --ink: #f4f1ea;
+      --muted: rgba(244, 241, 234, 0.72);
+      --line: rgba(244, 241, 234, 0.18);
+      --panel: rgba(9, 14, 22, 0.58);
+      --panel-strong: rgba(7, 10, 15, 0.78);
+      --accent: #d9a85f;
+      --accent-deep: #b97636;
+      --blue: #7ea7be;
+      --shadow: rgba(0, 0, 0, 0.42);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      color: var(--ink);
+      background: #080b11;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      background: #080b11;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.68));
+      background-size: 100% 68px, 54px 100%, 100% 100%;
+      mix-blend-mode: screen;
+      opacity: 0.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100svh;
+      padding-bottom: 112px;
+    }
+
+    .section {
+      position: relative;
+      display: flex;
+      min-height: 100svh;
+      padding: 22px 18px 32px;
+      background-color: #080b11;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .inner {
+      width: min(100%, 430px);
+      margin: 0 auto;
+    }
+
+    .hero {
+      align-items: flex-end;
+      padding-top: 18px;
+      background:
+        linear-gradient(180deg, rgba(5, 7, 11, 0.18), rgba(5, 7, 11, 0.10) 34%, rgba(5, 7, 11, 0.86) 100%),
+        linear-gradient(140deg, rgba(126, 167, 190, 0.22), transparent 46%),
+        url("assets/lp-card-remote-work.png") center 42% / cover;
+    }
+
+    .hero .inner {
+      padding-bottom: clamp(28px, 8svh, 76px);
+    }
+
+    .pr {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      background: rgba(9, 14, 22, 0.44);
+      color: rgba(244, 241, 234, 0.62);
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    h1,
+    h2,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 18px;
+      max-width: 11em;
+      font-size: clamp(36px, 12.2vw, 56px);
+      line-height: 1.06;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-shadow: 0 16px 42px var(--shadow);
+    }
+
+    .lead {
+      margin-top: 18px;
+      max-width: 28em;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+      text-shadow: 0 12px 28px var(--shadow);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .chip {
+      padding: 8px 10px;
+      border: 1px solid rgba(244, 241, 234, 0.20);
+      background: rgba(6, 10, 16, 0.44);
+      color: rgba(244, 241, 234, 0.82);
+      font-size: 12px;
+      line-height: 1;
+      backdrop-filter: blur(14px);
+    }
+
+    .mid {
+      align-items: center;
+      background:
+        linear-gradient(180deg, rgba(8, 11, 17, 0.86), rgba(14, 19, 27, 0.70)),
+        linear-gradient(110deg, rgba(126, 167, 190, 0.10), rgba(217, 168, 95, 0.16)),
+        url("assets/lp-card-options.png") center 50% / cover;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    h2 {
+      margin-top: 10px;
+      font-size: 28px;
+      line-height: 1.28;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .copy {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    .signals {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .visual-strip {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(218px, 76%);
+      gap: 12px;
+      margin: 26px -18px 0;
+      padding: 0 18px 8px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .visual-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    .visual-card {
+      position: relative;
+      min-height: 252px;
+      overflow: hidden;
+      border: 1px solid rgba(244, 241, 234, 0.16);
+      background: rgba(6, 10, 16, 0.56);
+      scroll-snap-align: center;
+      box-shadow: 0 20px 52px rgba(0, 0, 0, 0.25);
+    }
+
+    .visual-card img {
+      display: block;
+      width: 100%;
+      height: 252px;
+      object-fit: cover;
+      object-position: center 36%;
+      filter: saturate(0.88) contrast(1.05);
+    }
+
+    .visual-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(5, 8, 13, 0.02), rgba(5, 8, 13, 0.34) 42%, rgba(5, 8, 13, 0.92) 100%),
+        linear-gradient(90deg, rgba(5, 8, 13, 0.36), transparent 58%);
+      pointer-events: none;
+    }
+
+    .visual-caption {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 13px;
+      z-index: 1;
+      padding: 11px 12px 10px;
+      background: rgba(5, 8, 13, 0.62);
+      border: 1px solid rgba(244, 241, 234, 0.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .visual-caption strong {
+      display: block;
+      color: rgba(244, 241, 234, 0.96);
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .visual-caption span {
+      display: block;
+      margin-top: 5px;
+      color: rgba(244, 241, 234, 0.64);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .signal {
+      border-top: 1px solid var(--line);
+      padding: 14px 0 4px;
+    }
+
+    .signal strong {
+      display: block;
+      color: rgba(244, 241, 234, 0.94);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .signal span {
+      display: block;
+      margin-top: 5px;
+      color: rgba(244, 241, 234, 0.58);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .final {
+      align-items: center;
+      min-height: 92svh;
+      background:
+        linear-gradient(180deg, rgba(8, 11, 17, 0.76), rgba(8, 11, 17, 0.96)),
+        linear-gradient(160deg, rgba(217, 168, 95, 0.12), transparent 48%),
+        url("assets/lp-card-consultation.png") center 52% / cover;
+    }
+
+    .consult {
+      width: 100%;
+      border: 1px solid rgba(244, 241, 234, 0.18);
+      background: var(--panel-strong);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(18px);
+    }
+
+    .consult-body {
+      padding: 22px 18px 20px;
+    }
+
+    .points {
+      display: grid;
+      gap: 11px;
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .points li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 8px;
+      align-items: start;
+      color: rgba(244, 241, 234, 0.78);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .points li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin: 8px 0 0 7px;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(217, 168, 95, 0.58);
+    }
+
+    .subtle {
+      margin-top: 18px;
+      color: rgba(244, 241, 234, 0.46);
+      font-size: 11px;
+      line-height: 1.65;
+    }
+
+    .inline-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      margin-top: 22px;
+      padding: 14px 18px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-deep));
+      color: #11100d;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 16px 36px rgba(217, 168, 95, 0.24);
+    }
+
+    .fixed-cta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 20;
+      padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+      background: linear-gradient(180deg, rgba(8, 11, 17, 0), rgba(8, 11, 17, 0.92) 24%, rgba(8, 11, 17, 0.98));
+    }
+
+    .fixed-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 430px);
+      min-height: 58px;
+      margin: 0 auto;
+      padding: 13px 18px;
+      border: 1px solid rgba(255, 231, 190, 0.36);
+      background: linear-gradient(180deg, #e2b66f, #bd7837);
+      color: #11100d;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.45;
+      text-align: center;
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.38);
+    }
+
+    .fixed-cta small {
+      display: block;
+      margin-top: 5px;
+      color: rgba(244, 241, 234, 0.52);
+      font-size: 10px;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    @media (min-width: 720px) {
+      .section {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      .inner {
+        width: min(100%, 760px);
+      }
+
+      h1 {
+        max-width: 10em;
+        font-size: 64px;
+      }
+
+      .lead,
+      .copy {
+        font-size: 16px;
+      }
+
+      .signals {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .visual-strip {
+        grid-auto-flow: initial;
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        overflow: visible;
+      }
+
+      .visual-card,
+      .visual-card img {
+        height: 286px;
+      }
+
+      .consult {
+        max-width: 620px;
+      }
+
+      .fixed-cta a {
+        width: 430px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="section hero" aria-label="導入">
+      <div class="inner">
+        <span class="pr">PR / エンジニア経験者向け転職相談</span>
+        <h1>年収は上がった。<br>でも、人生が進んでいる感じがしない。</h1>
+        <p class="lead">
+          評価も給与も悪くない。けれど、夜の自宅デスクでコードレビューの通知が落ち着いたあと、ふと先の景色が見えなくなる。
+          東京・大阪で働く20〜30代エンジニアへ。年収、技術、リモート・ハイブリッドの働き方、将来像を一度ほどいてから次の職場を考える転職相談です。
+        </p>
+        <div class="chips" aria-label="対象条件">
+          <span class="chip">東京・大阪エリア希望</span>
+          <span class="chip">20〜30代</span>
+          <span class="chip">エンジニア経験者</span>
+          <span class="chip">年収と納得感</span>
+          <span class="chip">リモート・ハイブリッド</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mid" aria-label="課題提起">
+      <div class="inner">
+        <p class="eyebrow">CAREER DRIFT</p>
+        <h2>転職したいというより、<br>このまま続くことが怖い。</h2>
+        <p class="copy">
+          年収アップだけをゴールにすると、次の会社でも同じ違和感を持ち込むことがあります。
+          人は忙しいほど「今より悪くならない選択」を続けがちです。技術領域、出社頻度、テキストコミュニケーション、事業フェーズ、チームの温度感。
+          言語化しにくい不安まで整理してから、東京・大阪の現実的な候補を見ます。
+        </p>
+        <div class="signals">
+          <div class="signal">
+            <strong>年収1,000万円以上の案件も視野に</strong>
+            <span>収入を守りながら、裁量や成長実感も諦めたくない人へ。</span>
+          </div>
+          <div class="signal">
+            <strong>大手からスタートアップまで比較</strong>
+            <span>安定、裁量、技術投資、出社頻度、組織文化を同じ目線で見る。</span>
+          </div>
+          <div class="signal">
+            <strong>面接前の不安を先に潰す</strong>
+            <span>職務経歴書、面接対策、転職理由の整理まで伴走。</span>
+          </div>
+        </div>
+        <div class="visual-strip" aria-label="相談で整理する3つの視点">
+          <figure class="visual-card">
+            <img src="assets/lp-card-remote-work.png" alt="夜の自宅デスクで働くエンジニア">
+            <figcaption class="visual-caption">
+              <strong>働き方の違和感</strong>
+              <span>リモート、出社頻度、レビュー文化まで見る。</span>
+            </figcaption>
+          </figure>
+          <figure class="visual-card">
+            <img src="assets/lp-card-options.png" alt="都市の夜景を背景にキャリアの選択肢を比較する様子">
+            <figcaption class="visual-caption">
+              <strong>選択肢の質</strong>
+              <span>大手、成長企業、技術投資を比べる。</span>
+            </figcaption>
+          </figure>
+          <figure class="visual-card">
+            <img src="assets/lp-card-consultation.png" alt="静かな環境でキャリア相談をする様子">
+            <figcaption class="visual-caption">
+              <strong>言語化の時間</strong>
+              <span>不満ではなく、次の条件に変える。</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final" aria-label="相談案内">
+      <div class="inner">
+        <div class="consult">
+          <div class="consult-body">
+            <p class="eyebrow">PRIVATE CAREER SESSION</p>
+            <h2>夜に感じた違和感を、次の職場選びの条件に変える。</h2>
+            <p class="copy">
+              いまの不満を無理に転職理由へ変換しなくて大丈夫です。
+              「年収は上げたい。でも、働き方やチーム選びで同じ失敗はしたくない」。
+              大手教育事業グループ由来の支援体制で、経験、希望、価値観を整理し、
+              東京・大阪エリアで現実的な選択肢を見つけます。
+            </p>
+            <ul class="points">
+              <li>WEB申込後、面談設定までオンラインでスムーズに進行</li>
+              <li>エンジニア経験者向けに、技術とキャリアの両面から相談</li>
+              <li>求人紹介だけでなく、職務経歴書・面接準備も手厚くフォロー</li>
+              <li>大手から成長企業まで、出社頻度や価値観も含めて提案</li>
+            </ul>
+            <a class="inline-cta" href="https://example.com">年収だけでは解決しないキャリアを相談する</a>
+            <p class="subtle">
+              対象：エンジニア経験者、東京・大阪エリアでの就職を希望する方。申込内容や状況により案内できない場合があります。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="fixed-cta" aria-label="固定CTA">
+    <a href="https://example.com">年収だけでは解決しないキャリアを相談する</a>
+    <small>東京・大阪で転職を考えるエンジニア経験者向け</small>
+  </div>
+</body>
+</html>
+      line-height: 1.45;
+      text-align: center;
