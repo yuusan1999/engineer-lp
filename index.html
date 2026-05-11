@@ -112,13 +112,14 @@
 
     h1 {
       margin-top: 18px;
-      max-width: 11em;
+      max-width: none;
       font-size: clamp(36px, 12.2vw, 56px);
-      line-height: 1.06;
+      line-height: 1.08;
       font-weight: 800;
       letter-spacing: 0;
       text-shadow: 0 16px 42px var(--shadow);
-    `r`n  white-space: nowrap;`r`n  word-break: keep-all;`r`n}
+    }
+    h1 span { display:block; white-space: nowrap; }
 
     .lead {
       margin-top: 18px;
@@ -391,9 +392,15 @@
       }
 
       h1 {
-        max-width: 10em;
-        font-size: 64px;
-      `r`n  white-space: nowrap;`r`n  word-break: keep-all;`r`n}
+      margin-top: 18px;
+      max-width: none;
+      font-size: clamp(36px, 12.2vw, 56px);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-shadow: 0 16px 42px var(--shadow);
+    }
+    h1 span { display:block; white-space: nowrap; }
 
       .lead,
       .copy {
@@ -435,7 +442,7 @@
     <section class="section hero" aria-label="導入">
       <div class="inner">
         <span class="pr">PR / エンジニア経験者向け転職相談</span>
-        <h1>年収は上がった。<br>でも、人生が進んでいる感じがしない。</h1>
+        <h1><span>年収は上がった。</span><span>でも、人生が進んでいる感じがしない。</span></h1>
         <p class="lead">
           評価も給与も悪くない。けれど、夜の自宅デスクでコードレビューの通知が落ち着いたあと、ふと先の景色が見えなくなる。
           東京・大阪で働く20〜30代エンジニアへ。年収、技術、リモート・ハイブリッドの働き方、将来像を一度ほどいてから次の職場を考える転職相談です。
@@ -533,5 +540,6 @@
   </div>
 </body>
 </html>
+
 
 
