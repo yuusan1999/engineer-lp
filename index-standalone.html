@@ -28,6 +28,7 @@
     html {
       min-height: 100%;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
@@ -76,6 +77,7 @@
 
     .inner {
       width: min(100%, 430px);
+      max-width: calc(100vw - 36px);
       margin: 0 auto;
     }
 
@@ -119,7 +121,9 @@
       letter-spacing: 0;
       text-shadow: 0 16px 42px var(--shadow);
     }
-    h1 span { display:block; white-space: nowrap; }
+    h1 span {
+      display: block;
+    }
 
     .lead {
       margin-top: 18px;
@@ -188,9 +192,10 @@
       grid-auto-flow: column;
       grid-auto-columns: minmax(218px, 76%);
       gap: 12px;
-      margin: 26px -18px 0;
-      padding: 0 18px 8px;
+      margin: 26px 0 0;
+      padding: 0 0 8px;
       overflow-x: auto;
+      max-width: 100%;
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
     }
@@ -337,6 +342,7 @@
       justify-content: center;
       min-height: 54px;
       width: min(100%, 430px);
+      max-width: calc(100vw - 72px);
       margin: 22px auto 0;
       padding: 14px 18px;
       background: linear-gradient(180deg, var(--accent), var(--accent-deep));
@@ -369,6 +375,7 @@
       align-items: center;
       justify-content: center;
       width: min(100%, 430px);
+      max-width: calc(100vw - 28px);
       min-height: 58px;
       margin: 0 auto;
       padding: 13px 18px;
@@ -410,7 +417,10 @@
       letter-spacing: 0;
       text-shadow: 0 16px 42px var(--shadow);
     }
-    h1 span { display:block; white-space: nowrap; }
+      h1 span {
+        display: block;
+        white-space: nowrap;
+      }
 
       .lead,
       .copy {
