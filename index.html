@@ -335,7 +335,7 @@
       align-items: center;
       justify-content: center;
       min-height: 54px;
-      width: min(100%, 420px);
+      width: min(100%, 430px);
       margin: 22px auto 0;
       padding: 14px 18px;
       background: linear-gradient(180deg, var(--accent), var(--accent-deep));
@@ -345,6 +345,12 @@
       box-shadow: 0 16px 36px rgba(217, 168, 95, 0.24);
       line-height: 1.45;
       text-align: center;
+    }
+
+    .inline-cta-wrap {
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
 
     .fixed-cta {
@@ -437,6 +443,10 @@
       .fixed-cta a {
         width: 430px;
       }
+
+      .inline-cta {
+        width: 430px;
+      }
     }
   </style>
 </head>
@@ -527,7 +537,9 @@
               <li>求人紹介だけでなく、職務経歴書・面接準備も手厚くフォロー</li>
               <li>大手から成長企業まで、出社頻度や価値観も含めて提案</li>
             </ul>
-            <a class="inline-cta" href="https://example.com">年収だけでは解決しないキャリアを相談する</a>
+            <div class="inline-cta-wrap">
+              <a class="inline-cta" href="https://example.com">年収だけでは解決しないキャリアを相談する</a>
+            </div>
             <p class="subtle">
               対象：エンジニア経験者、東京・大阪エリアでの就職を希望する方。申込内容や状況により案内できない場合があります。
             </p>
