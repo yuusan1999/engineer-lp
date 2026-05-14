@@ -28,7 +28,6 @@
     html {
       min-height: 100%;
       scroll-behavior: smooth;
-      overflow-x: hidden;
     }
 
     body {
@@ -77,7 +76,6 @@
 
     .inner {
       width: min(100%, 430px);
-      max-width: calc(100vw - 36px);
       margin: 0 auto;
     }
 
@@ -87,7 +85,7 @@
       background:
         linear-gradient(180deg, rgba(5, 7, 11, 0.18), rgba(5, 7, 11, 0.10) 34%, rgba(5, 7, 11, 0.86) 100%),
         linear-gradient(140deg, rgba(126, 167, 190, 0.22), transparent 46%),
-        url("assets/bg-hero-night-desk.png") center 42% / cover;
+        url("assets/lp-card-remote-work.png") center 42% / cover;
     }
 
     .hero .inner {
@@ -121,9 +119,9 @@
       letter-spacing: 0;
       text-shadow: 0 16px 42px var(--shadow);
     }
-    h1 span {
-      display: block;
-    }
+    h1 span { display:block; white-space: nowrap; }
+    .hero-title .line1{ display:block; white-space:nowrap; }
+    .hero-title .line2{ display:block; }
 
     .lead {
       margin-top: 18px;
@@ -156,7 +154,7 @@
       background:
         linear-gradient(180deg, rgba(8, 11, 17, 0.86), rgba(14, 19, 27, 0.70)),
         linear-gradient(110deg, rgba(126, 167, 190, 0.10), rgba(217, 168, 95, 0.16)),
-        url("assets/bg-options-city.png") center 50% / cover;
+        url("assets/lp-card-options.png") center 50% / cover;
     }
 
     .eyebrow {
@@ -192,10 +190,9 @@
       grid-auto-flow: column;
       grid-auto-columns: minmax(218px, 76%);
       gap: 12px;
-      margin: 26px 0 0;
-      padding: 0 0 8px;
+      margin: 26px -18px 0;
+      padding: 0 18px 8px;
       overflow-x: auto;
-      max-width: 100%;
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
     }
@@ -283,11 +280,10 @@
     .final {
       align-items: center;
       min-height: 92svh;
-      padding-bottom: 148px;
       background:
         linear-gradient(180deg, rgba(8, 11, 17, 0.76), rgba(8, 11, 17, 0.96)),
         linear-gradient(160deg, rgba(217, 168, 95, 0.12), transparent 48%),
-        url("assets/bg-consult-room.png") center 52% / cover;
+        url("assets/lp-card-consultation.png") center 52% / cover;
     }
 
     .consult {
@@ -299,7 +295,7 @@
     }
 
     .consult-body {
-      padding: 22px 18px 24px;
+      padding: 22px 18px 20px;
     }
 
     .points {
@@ -341,23 +337,13 @@
       align-items: center;
       justify-content: center;
       min-height: 54px;
-      width: min(100%, 430px);
-      max-width: calc(100vw - 72px);
-      margin: 22px auto 0;
+      margin-top: 22px;
       padding: 14px 18px;
       background: linear-gradient(180deg, var(--accent), var(--accent-deep));
       color: #11100d;
       font-size: 14px;
       font-weight: 800;
       box-shadow: 0 16px 36px rgba(217, 168, 95, 0.24);
-      line-height: 1.45;
-      text-align: center;
-    }
-
-    .inline-cta-wrap {
-      display: flex;
-      justify-content: center;
-      width: 100%;
     }
 
     .fixed-cta {
@@ -375,7 +361,6 @@
       align-items: center;
       justify-content: center;
       width: min(100%, 430px);
-      max-width: calc(100vw - 28px);
       min-height: 58px;
       margin: 0 auto;
       padding: 13px 18px;
@@ -417,10 +402,9 @@
       letter-spacing: 0;
       text-shadow: 0 16px 42px var(--shadow);
     }
-      h1 span {
-        display: block;
-        white-space: nowrap;
-      }
+    h1 span { display:block; white-space: nowrap; }
+    .hero-title .line1{ display:block; white-space:nowrap; }
+    .hero-title .line2{ display:block; }
 
       .lead,
       .copy {
@@ -454,10 +438,6 @@
       .fixed-cta a {
         width: 430px;
       }
-
-      .inline-cta {
-        width: 430px;
-      }
     }
   </style>
 </head>
@@ -466,7 +446,7 @@
     <section class="section hero" aria-label="導入">
       <div class="inner">
         <span class="pr">PR / エンジニア経験者向け転職相談</span>
-        <h1><span>年収は上がった。</span><span>でも、人生が進んでいる感じがしない。</span></h1>
+        <h1 class="hero-title"><span class="line1">年収は上がった。</span><span class="line2">でも、人生が進んでいる感じがしない。</span></h1>
         <p class="lead">
           評価も給与も悪くない。けれど、夜の自宅デスクでコードレビューの通知が落ち着いたあと、ふと先の景色が見えなくなる。
           東京・大阪で働く20〜30代エンジニアへ。年収、技術、リモート・ハイブリッドの働き方、将来像を一度ほどいてから次の職場を考える転職相談です。
@@ -548,9 +528,7 @@
               <li>求人紹介だけでなく、職務経歴書・面接準備も手厚くフォロー</li>
               <li>大手から成長企業まで、出社頻度や価値観も含めて提案</li>
             </ul>
-            <div class="inline-cta-wrap">
-              <a class="inline-cta" href="https://example.com">年収だけでは解決しないキャリアを相談する</a>
-            </div>
+            <a class="inline-cta" href="https://example.com">年収だけでは解決しないキャリアを相談する</a>
             <p class="subtle">
               対象：エンジニア経験者、東京・大阪エリアでの就職を希望する方。申込内容や状況により案内できない場合があります。
             </p>
@@ -566,6 +544,8 @@
   </div>
 </body>
 </html>
+
+
 
 
 
