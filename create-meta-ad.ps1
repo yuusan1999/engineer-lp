@@ -47,7 +47,7 @@ $fontFamily = "Yu Gothic"
 $small = [System.Drawing.Font]::new($fontFamily, 28, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
 $headline = [System.Drawing.Font]::new($fontFamily, 64, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
 $body = [System.Drawing.Font]::new($fontFamily, 32, [System.Drawing.FontStyle]::Regular, [System.Drawing.GraphicsUnit]::Pixel)
-$ctaFont = [System.Drawing.Font]::new($fontFamily, 34, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
+$ctaFont = [System.Drawing.Font]::new($fontFamily, 28, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
 $badgeFont = [System.Drawing.Font]::new($fontFamily, 30, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
 
 $sf = [System.Drawing.StringFormat]::new()
@@ -77,9 +77,9 @@ $g.FillPath($accentBrush, $badgePath)
 $g.DrawString("PR / 20〜30代エンジニア経験者向け", $small, $mutedBrush, [System.Drawing.RectangleF]::new(72, 184, 840, 48), $sf)
 $g.DrawLine($linePen, 72, 250, 360, 250)
 $g.DrawString("年収は上がった。`nでも、毎日が`n進んでる感じは`nしなかった。", $headline, $inkBrush, [System.Drawing.RectangleF]::new(72, 292, 930, 420), $sf)
-$g.DrawString("高年収案件も視野に。`nリモート、出社頻度、技術、チーム。`n条件だけではなく、価値観から選ぶ転職相談。", $body, $mutedBrush, [System.Drawing.RectangleF]::new(76, 740, 880, 210), $sf)
+$g.DrawString("1,000万をこえる高年収案件も視野に。`nリモート、出社頻度、技術、チーム。`n条件だけではなく、価値観から選ぶ転職相談。", $body, $mutedBrush, [System.Drawing.RectangleF]::new(76, 740, 880, 210), $sf)
 
-$pillRect = [System.Drawing.Rectangle]::new(72, 996, 710, 82)
+$pillRect = [System.Drawing.Rectangle]::new(72, 996, 780, 82)
 $path = [System.Drawing.Drawing2D.GraphicsPath]::new()
 $r = 12
 $path.AddArc($pillRect.X, $pillRect.Y, $r, $r, 180, 90)
@@ -91,9 +91,9 @@ $g.FillPath($accentBrush, $path)
 
 [System.Windows.Forms.TextRenderer]::DrawText(
   $g,
-  "キャリア相談へ進む",
+  "年収だけでは解決しないキャリアを整理する",
   $ctaFont,
-  [System.Drawing.Rectangle]::new(106, 1008, 660, 62),
+  [System.Drawing.Rectangle]::new(96, 1008, 740, 62),
   [System.Drawing.Color]::FromArgb(19, 16, 13),
   [System.Windows.Forms.TextFormatFlags]::VerticalCenter -bor [System.Windows.Forms.TextFormatFlags]::Left
 )
@@ -107,6 +107,7 @@ $bmp.Dispose()
 $src.Dispose()
 
 Get-Item $outPath | Select-Object FullName, Length, LastWriteTime
+
 
 
 
